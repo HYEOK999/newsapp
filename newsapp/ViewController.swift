@@ -26,6 +26,15 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetail"{
+            if let indexPath = tableVW.indexPathForSelectedRow{
+                let destinationVC = segue.destination as! DetailViewController
+                destinationVC.urlString = articles[indexPath.row].url
+            }
+        }
+    }
+    
     func getData(){
         let newsToURL = URL(string: newsURL)
         let request = URLRequest(url: newsToURL!)

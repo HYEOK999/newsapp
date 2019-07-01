@@ -7,18 +7,33 @@
 //
 
 import UIKit
+import SVProgressHUD
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController , UIWebViewDelegate {
 
     @IBOutlet weak var webVW: UIWebView!
     
+    var urlString : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        webVW.delegate = self
 
+        let url = URL(string: urlString)
+        let request = URLRequest(url: url!)
+        
+        webVW.loadRequest(request)
         // Do any additional setup after loading the view.
     }
     
-
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        SVProgressHUD.dismiss()
+    }
+    
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        SVProgressHUD.show()
+    }
+    
     /*
     // MARK: - Navigation
 
