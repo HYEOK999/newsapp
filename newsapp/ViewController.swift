@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import SVProgressHUD
+import Alamofire
+import Kingfisher
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableVW: UITableView!
     
-    private let newsURL = ""
+    private let newsURL = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=aef344beb1ca424c8b8592dd9bdc6188"
+    private var articles = [Aricle]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

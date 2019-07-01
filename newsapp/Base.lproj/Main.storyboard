@@ -64,6 +64,11 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="authorLB" destination="Thr-4L-CaT" id="ual-xX-nGn"/>
+                                            <outlet property="desLB" destination="SNL-ye-U1K" id="bUd-2b-hj7"/>
+                                            <outlet property="imageVW" destination="Zg9-aH-NYW" id="6Q7-v6-Qft"/>
+                                            <outlet property="nameLB" destination="Ixo-3r-5PR" id="Yop-Rs-dq9"/>
+                                            <outlet property="titleLB" destination="voM-VQ-bpf" id="jUv-M2-u38"/>
                                             <segue destination="AWJ-Dx-cSx" kind="show" identifier="toDetail" id="tmf-yY-qhI"/>
                                         </connections>
                                     </tableViewCell>

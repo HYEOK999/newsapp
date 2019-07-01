@@ -10,6 +10,18 @@ import UIKit
 
 class DetailTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var nameLB: UILabel!
+    
+    @IBOutlet weak var titleLB: UILabel!
+    @IBOutlet weak var desLB: UILabel!
+    @IBOutlet weak var authorLB: UILabel!
+    @IBOutlet weak var imageVW: UIImageView!{
+        didSet{
+            imageVW.layer.cornerRadius = imageVW.bounds.width/2
+            imageVW.clipsToBounds = true
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
