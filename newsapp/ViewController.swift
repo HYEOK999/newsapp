@@ -71,11 +71,18 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource{
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return articles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableVW.dequeueReusableCell(withIdentifier: "cell01", for: indexPath) as! DetailTableViewCell
+        cell.titleLB.text = articles[indexPath.row].title
+        cell.authorLB.text = articles[indexPath.row].author
+        cell.desLB.text = articles[indexPath.row].desc
+        cell.imageVW.kf.setImage(with: URL(string: articles[indexPath.row].newsImage))
+        cell.nameLB.text = articles[indexPath.row].name
+        
+        return cell
     }
     
     
